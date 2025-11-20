@@ -25,11 +25,21 @@ export default function App() {
 
   console.log(data);
 
+  //* Loading state
   if (loading) return <h3>Please Wait Page is been Loading....</h3>;
 
   return (
     <div>
       <h1>Simple Pagination</h1>
+      <ul>
+        {data.map((post) => {
+          return (
+            <li key={post.id}>
+              {post.id}-{post.title }
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }
