@@ -50,8 +50,18 @@ export default function App() {
 
       <div>
         <button onClick={() => paginate(1)}>First</button>
-        <button onClick={() => paginate(currentPage - 1)}>Pervious </button>
-        <button onClick={() => paginate(currentPage + 1)}>Next</button>
+        <button
+          disabled={currentPage === 1}
+          onClick={() => paginate(currentPage - 1)}
+        >
+          Pervious{" "}
+        </button>
+        <button
+          disabled={currentPage === totalPage}
+          onClick={() => paginate(currentPage + 1)}
+        >
+          Next
+        </button>
         <button onClick={() => paginate(totalPage)}>Last</button>
       </div>
     </div>
