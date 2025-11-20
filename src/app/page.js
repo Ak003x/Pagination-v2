@@ -48,7 +48,7 @@ export default function App() {
         })}
       </ul>
 
-      <div>
+      <div className="space-x-2">
         <button onClick={() => paginate(1)}>First</button>
         <button
           disabled={currentPage === 1}
@@ -74,7 +74,7 @@ export default function App() {
         >
           Next
         </button>
-        <button onClick={() => paginate(totalPage)}>Last</button>
+        <button className="bg-red-500 rounded" onClick={() => paginate(totalPage)}>Last</button>
       </div>
     </div>
   );
