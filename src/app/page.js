@@ -31,6 +31,7 @@ export default function App() {
   const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
   const totalPage = Math.ceil(data.length) / postPerPage;
 
+  const paginate = (page) => setCurrentPage(page);
   //* Loading state
   if (loading) return <h3>Please Wait Page is been Loading....</h3>;
 
@@ -48,7 +49,10 @@ export default function App() {
       </ul>
 
       <div>
-        <button></button>
+        <button onClick={() => paginate(1)}>First</button>
+        <button onClick={() => paginate(currentPage - 1)}>Pervious </button>
+        <button onClick={() => paginate(currentPage + 1)}>Next</button>
+        <button onClick={() => paginate(totalPage)}>Last</button>
       </div>
     </div>
   );
