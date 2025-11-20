@@ -56,6 +56,18 @@ export default function App() {
         >
           Pervious{" "}
         </button>
+
+        {new Array(totalPage).fill(0).map((_, index) => {
+          return (
+            <button
+              className={currentPage === index + 1 ? "text-blue-500" : ""}
+              onClick={() => paginate(index + 1)}
+              key={index + 1}
+            >
+              {index + 1}
+            </button>
+          );
+        })}
         <button
           disabled={currentPage === totalPage}
           onClick={() => paginate(currentPage + 1)}
