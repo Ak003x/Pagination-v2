@@ -74,7 +74,12 @@ export default function App() {
         >
           Next
         </button>
-        <button className="bg-red-500 rounded" onClick={() => paginate(totalPage)}>Last</button>
+        <button
+          className="bg-red-500 rounded"
+          onClick={() => paginate(totalPage)}
+        >
+          Last
+        </button>
       </div>
     </div>
   );
